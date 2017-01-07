@@ -15,20 +15,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tv = (TextView) findViewById(R.id.textView2);
         btn2 = (Button) findViewById(R.id.button2);
-        btn2.setOnClickListener(new myclass());
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv.setText("TT22");
+            }
+        });
     }
 
     public void click1(View v)
     {
         tv.setText("Hello World");
     }
-    class myclass implements View.OnClickListener
-    {
-        @Override
-        public void onClick(View v) {
-            tv.setText("TT22");
-        }
-    }
+
 }
 
 
