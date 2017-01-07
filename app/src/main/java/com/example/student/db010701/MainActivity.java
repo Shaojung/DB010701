@@ -25,7 +25,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void click1(View v)
     {
-        tv.setText("Hello World");
+        switch(v.getId())
+        {
+            case R.id.button:
+                tv.setText("Hello World1");
+                break;
+            case R.id.button3:
+                tv.setText("Hello World3");
+                break;
+            case R.id.button4:
+                tv.setText("Hello World4");
+                break;
+        }
+
     }
 
 }
