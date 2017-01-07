@@ -4,12 +4,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity
     implements View.OnClickListener{
     TextView tv;
     Button btn2, btn5, btn6;
+    ToggleButton tb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +24,13 @@ public class MainActivity extends AppCompatActivity
         btn5.setOnClickListener(this);
         btn6 = (Button) findViewById(R.id.button6);
         btn6.setOnClickListener(this);
-
+        tb = (ToggleButton) findViewById(R.id.toggleButton);
+        tb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                tv.setText(String.valueOf(isChecked));
+            }
+        });
     }
 
     public void click1(View v)
