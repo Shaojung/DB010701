@@ -15,8 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tv = (TextView) findViewById(R.id.textView2);
         btn2 = (Button) findViewById(R.id.button2);
-        myclass c = new myclass();
-        btn2.setOnClickListener(c);
+        btn2.setOnClickListener(new myclass());
     }
 
     public void click1(View v)
